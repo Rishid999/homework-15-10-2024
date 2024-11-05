@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework-15-10-2024</title>
+</head>
+<body>
+    <input type='text' id='num1'>
+    <input type='text' id="num2">
+    <button id="btn" ondblclick="btnSum()">Посчитать</button>
+    <br>К сожалению, alert сработает только один раз, иначе невозможно проверить двойное нажатие:(
+
+    </form>
+</body>
+<script>
+    function sum() {
+        const num1 = Number(document.querySelector('#num1').value)
+        const num2 = Number(document.querySelector('#num2').value)
+        let sums 
+        if (isNaN(num1) == !true && isNaN(num2) == !true){
+            sums = `Сумма чисел: ${num1+num2}`
+        } else {
+            sums = 'Невозможно вычислить сумму'
+        }
+        alert(sums)
+        btn.removeEventListener('click', sum)
+    }
+    function btnSum () {
+        const btn = document.querySelector('#btn')
+        const num1 = Number(document.querySelector('#num1').value)
+        const num2 = Number(document.querySelector('#num2').value)
+        let sums 
+        if (isNaN(num1) == !true && isNaN(num2) == !true){
+            sums = `Сумма чисел: ${num1+num2}`
+        } else {
+            sums = 'Невозможно вычислить сумму'
+        }
+        btn.textContent = sums
+    }
+    btn.addEventListener('click', sum)
+    event.stopPropagation
+</script>
+</html>
